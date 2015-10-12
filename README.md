@@ -18,7 +18,10 @@ As no 3rd party lib dependencies, you can just download [ini_e](https://raw.gith
 
 ## Usages
 
+`Usages` usaually look scared to me, I normally go directly to [Examples](#examples).
+
 ```
+./ini_e.py --help
 usage: A tool to alter ini config files. [-h] [--set SET [SET ...]]
                                          [--del DEL [DEL ...]] [-o OUT]
                                          [-v VERBOSE]
@@ -29,11 +32,14 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --set SET [SET ...]   Add items, and it has to be in following format
+  --set SET [SET ...]   Add item. Specify it in format
                         "SECTION.item_name=value"
-  --del DEL [DEL ...]   Del section or items, has to be in following format
-                        "SECTION.item_name"
-  -o OUT, --out OUT
+  --del DEL [DEL ...]   To remove item would require format
+                        "SECTION.item_name", "SECTION" if you want to remove
+                        the whole section
+  -o OUT, --out OUT     Where you wish to save the ini file to. If the
+                        operations failed the existing file would not be
+                        overwritten.
   -v VERBOSE, --verbose VERBOSE
                         Enable logging to info level, default is warnning
 ```

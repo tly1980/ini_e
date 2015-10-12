@@ -35,7 +35,8 @@ AP.add_argument("ini", type=str, nargs="+")
 AP.add_argument("--set", nargs="+", help='''Add item. Specify it in format "SECTION.item_name=value"''')
 AP.add_argument("--del", nargs="+", help='''To remove item would require format "SECTION.item_name",
     "SECTION" if you want to remove the whole section''')
-AP.add_argument("-o", "--out", default=None)
+AP.add_argument("-o", "--out", default=None, help='''Where you wish to save the ini file to.
+If the operations failed the existing file would not be overwritten.''')
 AP.add_argument("-v", "--verbose", default=False, help="Enable logging to info level, default is warnning")
 
 def handle_set(cfg, updates):
