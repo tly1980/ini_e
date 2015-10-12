@@ -6,9 +6,37 @@ A tool to help you manipulate ini files.
 
 Essentially, an ini files is nothing but just a dictionary. Most modern languages shiped with a ini configuartion lib that help you read / modify ini files.
 
-However this is not the case with a lot of *nix shells . Wouldn't it be nice if there is a command line tool to make ini files modifying easier.
+However this is not the case with a lot of *nix shells . Wouldn't it be nice if there is a command line tool to make ini files modifying easier ?  :)
 
-`INI file enhancer` is exactly a tool for ini manipulation, it allows you add / update / delete a item of a ini files, what is more than that, to extends multiple ini files into one new ini file.
+[INI file enhancer](https://github.com/tly1980/ini_e) is exactly a tool for ini manipulation, it allows you add / update / delete a item of a ini files, what is more than that, to extends multiple ini files into one new ini file.
+
+Powered by excellent python 2.x's [ConfigParser](https://docs.python.org/2/library/configparser.html#module-ConfigParser), `ini_e` managed to implment those features with a very small code footprint and without any dependencies or other 3rd party. 
+
+## Installation
+
+As no 3rd party lib dependencies, you can just download [ini_e](https://raw.githubusercontent.com/tly1980/ini_e/master/src/ini_e.py) to what ever folder appears in your [PATH](https://en.wikipedia.org/wiki/PATH_(variable)) and chmod with executable permission and run it.
+
+## Usages
+
+```
+usage: A tool to alter ini config files. [-h] [--set SET [SET ...]]
+                                         [--del DEL [DEL ...]] [-o OUT]
+                                         [-v VERBOSE]
+                                         ini [ini ...]
+
+positional arguments:
+  ini
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --set SET [SET ...]   Add items, and it has to be in following format
+                        "SECTION.item_name=value"
+  --del DEL [DEL ...]   Del section or items, has to be in following format
+                        "SECTION.item_name"
+  -o OUT, --out OUT
+  -v VERBOSE, --verbose VERBOSE
+                        Enable logging to info level, default is warnning
+```
 
 ## Examples
 
