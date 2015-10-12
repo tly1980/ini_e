@@ -30,12 +30,11 @@ import re
 import logging
 
 
-
-
 AP = argparse.ArgumentParser("A tool to alter ini config files.")
 AP.add_argument("ini", type=str, nargs="+")
-AP.add_argument("--set", nargs="+", help='Add items, and it has to be in following format "SECTION.item_name=value"')
-AP.add_argument("--del", nargs="+", help='Del section or items, has to be in following format "SECTION.item_name"')
+AP.add_argument("--set", nargs="+", help='''Add item. Specify it in format "SECTION.item_name=value"''')
+AP.add_argument("--del", nargs="+", help='''To remove item would require format "SECTION.item_name",
+    "SECTION" if you want to remove the whole section''')
 AP.add_argument("-o", "--out", default=None)
 AP.add_argument("-v", "--verbose", default=False, help="Enable logging to info level, default is warnning")
 
