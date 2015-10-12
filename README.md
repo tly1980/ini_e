@@ -129,11 +129,14 @@ b2=B2
 ```
 
 What I want is:
-1. Remove `a=A` in `[sec]`
+
+1. remove `a=A` in `[sec]`
 2. add `new_item=NEW` to `[sec]`
 3. update `a2` in `[sec2]` to `haha`
 
-`ini_e.py a.ini b.ini --del sec.a --set sec.new_item=NEW sec2.a2=haha`
+All those can be fullfilled in one command:
+
+```ini_e.py a.ini b.ini --del sec.a --set sec.new_item=NEW sec2.a2=haha```
 
 Output would be:
 ```ini
