@@ -48,13 +48,14 @@ optional arguments:
 
 ### Examples 1 - Dctionary extends
 
-Supposed you have `a.ini` 
+Supposed you have `a.ini` and `b.ini` looks like:
 ```ini
+# a.ini
 [sec]
 a=A
 ```
-and `b.ini`
 ```ini
+# b.ini
 [sec]
 b=B
 b1=B1
@@ -70,14 +71,16 @@ b1 = B1
 
 ### Examples 2 - Dctionary extends
 
-Supposed you have `a.ini` 
+Supposed you have `a.ini` and `b.ini` looks like:
 ```ini
+# a.ini
 [sec]
 a=A
 common=A_C
 ```
-and `b.ini`
+
 ```ini
+# b.ini
 [sec]
 b=B
 b1=B1
@@ -93,8 +96,9 @@ b = B
 b1 = B1
 ```
 
-If you have a `c.ini` like
+Also you have a  `c.ini` like
 ```ini
+# c.ini
 [sec]
 common=C_C
 ```
