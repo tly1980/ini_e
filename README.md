@@ -134,7 +134,7 @@ What I want is:
 2. add `new_item=NEW` to `[sec]`
 3. update `a2` in `[sec2]` to `haha`
 
-All those can be fullfilled in one command:
+All those can be done within one command:
 
 ```ini_e.py a.ini b.ini --del sec.a --set sec.new_item=NEW sec2.a2=haha```
 
