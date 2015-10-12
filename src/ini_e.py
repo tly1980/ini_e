@@ -30,13 +30,14 @@ import re
 import logging
 
 
-logging.basicConfig(format='%(levelname)-8s:%(message)s', level=logging.INFO)
+
 
 AP = argparse.ArgumentParser("A tool to alter ini config files.")
 AP.add_argument("ini", type=str, nargs="+")
 AP.add_argument("--set", nargs="+", help='Add items, and it has to be in following format "SECTION.item_name=value"')
 AP.add_argument("--del", nargs="+", help='Del section or items, has to be in following format "SECTION.item_name"')
 AP.add_argument("-o", "--out", default=None)
+AP.add_argument("-v", "--verbose", default=False, help="Enable logging to info level, default is warnning")
 
 def handle_set(cfg, updates):
     pattern = re.compile("([^.]+)\.([^=]+)\=(.*)")
@@ -65,6 +66,13 @@ def handle_del(cfg, dels):
 def main(args):
     try:
         c = ConfigParser.ConfigParser()
+
+        log_level = logging.WARNING
+        if args.verbose:
+            log_level = args.INFO
+        logging.basicConfig(format='%(levelname)-8s:%(message)s',
+            level=log_level)
+
         success = c.read(args.ini)
 
         logging.info("INI configs parsed: %s" % success)
